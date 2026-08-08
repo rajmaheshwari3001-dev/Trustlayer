@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trustlayer | AI-Powered Freelance Escrow</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Elements for Glassmorphism & Aesthetics -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h2>Trustlayer</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fa-solid fa-briefcase"></i> Contracts</a></li>
+                <li><a href="#"><i class="fa-solid fa-wallet"></i> Wallet</a></li>
+                <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+            </ul>
+            <div class="user-profile">
+                <div class="avatar"><img src="https://i.pravatar.cc/150?img=11" alt="User"></div>
+                <div class="info">
+                    <h4>Freelancer_X</h4>
+                    <p>Pro Developer</p>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="topbar">
+                <div class="search-bar">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Search contracts, transactions...">
+                </div>
+                <div class="actions">
+                    <button class="btn-icon"><i class="fa-regular fa-bell"></i></button>
+                    <button class="btn-primary">New Contract</button>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Overview Cards -->
+                <div class="stats-cards">
+                    <div class="glass-card stat">
+                        <div class="icon-wrap blue"><i class="fa-solid fa-lock"></i></div>
+                        <div class="stat-info">
+                            <p>Funds in Escrow</p>
+                            <h3>$4,500.00</h3>
+                        </div>
+                    </div>
+                    <div class="glass-card stat">
+                        <div class="icon-wrap green"><i class="fa-solid fa-check-double"></i></div>
+                        <div class="stat-info">
+                            <p>Validated Jobs</p>
+                            <h3>24</h3>
+                        </div>
+                    </div>
+                    <div class="glass-card stat">
+                        <div class="icon-wrap purple"><i class="fa-solid fa-bolt"></i></div>
+                        <div class="stat-info">
+                            <p>Trust Score</p>
+                            <h3>98%</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Contract & AI Validation Panel -->
+                <div class="validation-section glass-card">
+                    <div class="section-header">
+                        <h3>Active Contract: <span>Frontend Development</span></h3>
+                        <span class="badge pending">Awaiting Validation</span>
+                    </div>
+                    
+                    <div class="contract-details">
+                        <p><strong>Client:</strong> Acme Corp</p>
+                        <p><strong>Value:</strong> $1,200.00</p>
+                        <p><strong>Requirements:</strong> Responsive React App, Redux State, 90%+ Lighthouse Score.</p>
+                    </div>
+
+                    <!-- Submission Form -->
+                    <div class="submission-area" id="submission-area">
+                        <h4>Submit Work for AI Validation</h4>
+                        <div class="input-group">
+                            <i class="fa-brands fa-github"></i>
+                            <input type="text" id="repo-link" placeholder="Paste GitHub Repository URL...">
+                        </div>
+                        <button id="validate-btn" class="btn-primary full-width">
+                            <i class="fa-solid fa-microchip"></i> Run AI Validation
+                        </button>
+                    </div>
+
+                    <!-- Loading / Processing State -->
+                    <div class="processing-area hidden" id="processing-area">
+                        <div class="scanner">
+                            <div class="scan-line"></div>
+                        </div>
+                        <h4>AI is validating your code...</h4>
+                        <p>Analyzing logic, code quality, and project requirements.</p>
+                    </div>
+
+                    <!-- Result State -->
+                    <div class="result-area hidden" id="result-area">
+                        <div class="score-circle">
+                            <svg viewBox="0 0 36 36" class="circular-chart green">
+                              <path class="circle-bg"
+                                d="M18 2.0845
+                                  a 15.9155 15.9155 0 0 1 0 31.831
+                                  a 15.9155 15.9155 0 0 1 0 -31.831"
+                              />
+                              <path class="circle"
+                                stroke-dasharray="0, 100"
+                                id="score-path"
+                                d="M18 2.0845
+                                  a 15.9155 15.9155 0 0 1 0 31.831
+                                  a 15.9155 15.9155 0 0 1 0 -31.831"
+                              />
+                              <text x="18" y="20.35" class="percentage" id="score-text">0%</text>
+                            </svg>
+                        </div>
+                        <h3 id="result-title">Validation Passed!</h3>
+                        <p id="result-message">Work meets all quality standards.</p>
+                        
+                        <div class="release-action hidden" id="release-action">
+                            <button id="release-btn" class="btn-success">
+                                <i class="fa-solid fa-unlock-keyhole"></i> Release Escrow Payment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
