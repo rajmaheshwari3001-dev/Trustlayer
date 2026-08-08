@@ -3,20 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trustlayer | Premium AI Escrow</title>
-    <!-- Fonts -->
+    <title>Trustlayer | Deep AI Validation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Premium Mesh Gradient Background -->
     <div class="mesh-bg">
         <div class="blob-1"></div>
         <div class="blob-2"></div>
@@ -77,7 +72,7 @@
                                 <div class="pulse-dot"></div>
                                 <h3>Active Contract: <span>DeFi Dashboard v2</span></h3>
                             </div>
-                            <span class="status-badge pending">Awaiting Submission</span>
+                            <span class="status-badge pending" id="overall-status">Awaiting Submission</span>
                         </div>
                         
                         <div class="contract-meta">
@@ -98,7 +93,7 @@
                         <!-- Initial Submission Area -->
                         <div class="submission-area" id="submission-area">
                             <h4>Ready for AI Review?</h4>
-                            <p>Submit your GitHub repository or ZIP file to initiate the automated quality assurance process and release your funds.</p>
+                            <p>Submit your GitHub repository to initiate the deep AI audit and release your funds.</p>
                             
                             <div class="input-group">
                                 <div class="input-icon"><i class="fa-brands fa-github"></i></div>
@@ -109,25 +104,47 @@
                             </button>
                         </div>
 
-                        <!-- Live Terminal Processing Area -->
+                        <!-- Live Terminal & Pipeline Area -->
                         <div class="processing-area hidden" id="processing-area">
-                            <div class="terminal-header">
-                                <div class="mac-btns"><span></span><span></span><span></span></div>
-                                <span>trustlayer-ai-engine.exe</span>
+                            <!-- Visual Pipeline -->
+                            <div class="pipeline">
+                                <div class="pipe-step active" id="step-1">
+                                    <div class="step-icon"><i class="fa-brands fa-git-alt"></i></div>
+                                    <span>Fetch</span>
+                                </div>
+                                <div class="pipe-line"></div>
+                                <div class="pipe-step" id="step-2">
+                                    <div class="step-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                                    <span>Analyze</span>
+                                </div>
+                                <div class="pipe-line"></div>
+                                <div class="pipe-step" id="step-3">
+                                    <div class="step-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                                    <span>Security</span>
+                                </div>
+                                <div class="pipe-line"></div>
+                                <div class="pipe-step" id="step-4">
+                                    <div class="step-icon"><i class="fa-solid fa-gavel"></i></div>
+                                    <span>Verdict</span>
+                                </div>
                             </div>
-                            <div class="terminal-body" id="terminal-body">
-                                <!-- JS will inject terminal lines here -->
-                            </div>
-                            <div class="loading-bar-container">
-                                <div class="loading-bar" id="loading-bar"></div>
+
+                            <div class="terminal-container">
+                                <div class="terminal-header">
+                                    <div class="mac-btns"><span></span><span></span><span></span></div>
+                                    <span>trustlayer-ai-engine.exe</span>
+                                </div>
+                                <div class="terminal-body" id="terminal-body">
+                                    <!-- JS will inject terminal lines here -->
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Final Result Area -->
+                        <!-- Detailed AI Audit Report -->
                         <div class="result-area hidden" id="result-area">
                             <div class="result-header">
-                                <div class="icon-ring" id="result-icon-ring">
-                                    <i class="fa-solid fa-check" id="result-icon"></i>
+                                <div class="overall-score-circle">
+                                    <span id="final-score-text">0</span><small>%</small>
                                 </div>
                                 <h2 id="result-title">Validation Successful</h2>
                                 <p id="result-message">Code quality exceeds the 85% threshold. All security checks passed.</p>
@@ -136,21 +153,39 @@
                             <div class="score-breakdown">
                                 <div class="score-item">
                                     <span>Code Quality</span>
-                                    <strong class="green-text">94%</strong>
+                                    <strong id="score-quality" class="green-text">0%</strong>
                                 </div>
                                 <div class="score-item">
                                     <span>Security</span>
-                                    <strong class="green-text">99%</strong>
+                                    <strong id="score-security" class="green-text">0%</strong>
                                 </div>
                                 <div class="score-item">
-                                    <span>Reqs Match</span>
-                                    <strong class="green-text">92%</strong>
+                                    <span>Testing</span>
+                                    <strong id="score-testing" class="green-text">0%</strong>
+                                </div>
+                                <div class="score-item">
+                                    <span>Req Match</span>
+                                    <strong id="score-reqs" class="green-text">0%</strong>
                                 </div>
                             </div>
 
-                            <button id="release-btn" class="btn-success full-width glow-effect">
-                                <i class="fa-brands fa-ethereum"></i> Release Funds to Wallet
-                            </button>
+                            <!-- Issues List (Populated if failed or warnings exist) -->
+                            <div class="issues-list hidden" id="issues-list">
+                                <h4><i class="fa-solid fa-triangle-exclamation"></i> AI Audit Findings</h4>
+                                <ul id="issues-container">
+                                    <!-- Issues injected here -->
+                                </ul>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div id="action-buttons-container">
+                                <button id="release-btn" class="btn-success full-width glow-effect hidden">
+                                    <i class="fa-brands fa-ethereum"></i> Release Funds to Wallet
+                                </button>
+                                <button id="resubmit-btn" class="btn-secondary full-width hidden">
+                                    <i class="fa-solid fa-rotate-right"></i> Fix Issues & Resubmit
+                                </button>
+                            </div>
                         </div>
 
                     </div>
@@ -158,7 +193,6 @@
 
                 <!-- Right Column (Analytics & History) -->
                 <div class="analytics-col stagger-3">
-                    <!-- Chart Card -->
                     <div class="chart-card glass-panel">
                         <div class="card-header small">
                             <h3>Escrow Volume (30 Days)</h3>
@@ -169,7 +203,6 @@
                         </div>
                     </div>
 
-                    <!-- Recent Transactions -->
                     <div class="transactions-card glass-panel">
                         <div class="card-header small">
                             <h3>Recent Payouts</h3>
@@ -198,17 +231,6 @@
                                     <span><i class="fa-brands fa-ethereum"></i> 2.0 ETH</span>
                                 </div>
                             </li>
-                            <li class="tx-item">
-                                <div class="tx-icon green"><i class="fa-solid fa-arrow-down"></i></div>
-                                <div class="tx-info">
-                                    <h5>Backend Refactor</h5>
-                                    <span>Jul 29, 9:00 AM</span>
-                                </div>
-                                <div class="tx-amount">
-                                    <strong>+$1,800.00</strong>
-                                    <span><i class="fa-brands fa-ethereum"></i> 1.03 ETH</span>
-                                </div>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -216,9 +238,6 @@
             </div>
         </main>
     </div>
-
-    <!-- Celebration Canvas for Confetti (Optional) -->
-    <canvas id="confetti-canvas"></canvas>
 
     <script src="app.js"></script>
 </body>
