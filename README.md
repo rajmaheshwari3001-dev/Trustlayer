@@ -79,5 +79,4 @@ Trustlayer/
 ## 🤝 Contributing
 Contributions are welcome! Please create an issue to discuss the change you want to make before submitting a pull request.
 
-## 📄 License
-This project is built for Hacknovate 7.0.
+
