@@ -40,11 +40,11 @@ Trustlayer/
 └── assets/         # Static assets and images for documentation
 ```
 
-## 🛠️ Tech Stack (To be updated)
-- **Frontend**: *[Insert Tech Stack]*
-- **Backend**: *[Insert Tech Stack]*
-- **AI/ML**: *[Insert Validation Models]*
-- **Payments**: *[Insert Payment Gateway / Blockchain]*
+## 🛠️ Tech Stack
+- **Frontend**: Vanilla HTML5, CSS3 (Glassmorphism, CSS Animations), Vanilla JavaScript (ES6+), Chart.js
+- **Backend**: Python 3.10+, Flask API, Flask-CORS
+- **AI/ML**: Mock AI Evaluation Engine (simulating Deep Code Audit)
+- **Payments**: Mock Blockchain / Escrow Simulation
 
 ## 🏁 Getting Started
 
