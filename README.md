@@ -1,14 +1,14 @@
 <div align="center">
   <img src="https://via.placeholder.com/150x150.png?text=Trustlayer+Logo" alt="Trustlayer Logo" width="150" />
   <h1>Trustlayer</h1>
-  <p><strong>AI-powered freelance trust & validation system that automatically validates work quality and releases payment securely | Hacknovate 7.0</strong></p>
+  <p><strong>AI-powered freelance trust & validation system that automatically validates work quality and releases payment securely</strong></p>
 </div>
 
 ---
 
 ## 🚀 Overview
 
-Trustlayer bridges the trust gap between freelancers and clients. Built for **Hacknovate 7.0**, this platform acts as an intelligent escrow and validation layer. It leverages AI to automatically verify the quality of work submitted by freelancers. Once the work meets the predefined criteria, Trustlayer securely releases the payment—ensuring fairness, transparency, and zero friction.
+Trustlayer bridges the trust gap between freelancers and clients. This platform acts as an intelligent escrow and validation layer. It leverages AI to automatically verify the quality of work submitted by freelancers. Once the work meets the predefined criteria, Trustlayer securely releases the payment—ensuring fairness, transparency, and zero friction.
 
 ## ✨ Key Features
 
