@@ -3,150 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trustlayer | AI-Powered Freelance Escrow</title>
+    <title>Trustlayer | Premium AI Escrow</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Background Elements for Glassmorphism & Aesthetics -->
-    <div class="glow-orb orb-1"></div>
-    <div class="glow-orb orb-2"></div>
-    <div class="glow-orb orb-3"></div>
+    <!-- Premium Mesh Gradient Background -->
+    <div class="mesh-bg">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+        <div class="blob-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
 
     <div class="app-container">
         <!-- Sidebar Navigation -->
-        <nav class="sidebar">
-            <div class="logo">
-                <i class="fa-solid fa-shield-halved"></i>
+        <nav class="sidebar glass-panel">
+            <div class="logo stagger-1">
+                <div class="logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
                 <h2>Trustlayer</h2>
             </div>
-            <ul class="nav-links">
-                <li class="active"><a href="#"><i class="fa-solid fa-house"></i> Dashboard</a></li>
-                <li><a href="#"><i class="fa-solid fa-briefcase"></i> Contracts</a></li>
-                <li><a href="#"><i class="fa-solid fa-wallet"></i> Wallet</a></li>
-                <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+            
+            <ul class="nav-links stagger-2">
+                <li class="active"><a href="#"><i class="fa-solid fa-layer-group"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fa-solid fa-file-contract"></i> Smart Contracts</a></li>
+                <li><a href="#"><i class="fa-solid fa-chart-line"></i> Analytics</a></li>
+                <li><a href="#"><i class="fa-brands fa-ethereum"></i> Wallet</a></li>
             </ul>
-            <div class="user-profile">
-                <div class="avatar"><img src="https://i.pravatar.cc/150?img=11" alt="User"></div>
-                <div class="info">
-                    <h4>Freelancer_X</h4>
-                    <p>Pro Developer</p>
+
+            <div class="sidebar-bottom stagger-3">
+                <div class="trust-badge">
+                    <i class="fa-solid fa-certificate"></i>
+                    <span>Verified Expert</span>
+                </div>
+                <div class="user-profile">
+                    <img src="https://i.pravatar.cc/150?img=11" alt="User" class="avatar">
+                    <div class="info">
+                        <h4>Alex.eth</h4>
+                        <p>0x71C...34F9</p>
+                    </div>
                 </div>
             </div>
         </nav>
 
         <!-- Main Content -->
         <main class="main-content">
-            <header class="topbar">
-                <div class="search-bar">
-                    <i class="fa-solid fa-search"></i>
-                    <input type="text" placeholder="Search contracts, transactions...">
+            <header class="topbar stagger-1">
+                <div class="greeting">
+                    <h1>Welcome back, Alex</h1>
+                    <p>Here's what's happening with your escrowed funds today.</p>
                 </div>
                 <div class="actions">
-                    <button class="btn-icon"><i class="fa-regular fa-bell"></i></button>
-                    <button class="btn-primary">New Contract</button>
+                    <button class="btn-glass icon-only"><i class="fa-regular fa-bell"></i></button>
+                    <button class="btn-primary glow-effect"><i class="fa-solid fa-plus"></i> New Contract</button>
                 </div>
             </header>
 
             <div class="dashboard-grid">
-                <!-- Overview Cards -->
-                <div class="stats-cards">
-                    <div class="glass-card stat">
-                        <div class="icon-wrap blue"><i class="fa-solid fa-lock"></i></div>
-                        <div class="stat-info">
-                            <p>Funds in Escrow</p>
-                            <h3>$4,500.00</h3>
+                
+                <!-- Left Column (Validation UI) -->
+                <div class="validation-col stagger-2">
+                    <div class="validation-card glass-panel main-card">
+                        <div class="card-header">
+                            <div class="title-group">
+                                <div class="pulse-dot"></div>
+                                <h3>Active Contract: <span>DeFi Dashboard v2</span></h3>
+                            </div>
+                            <span class="status-badge pending">Awaiting Submission</span>
                         </div>
-                    </div>
-                    <div class="glass-card stat">
-                        <div class="icon-wrap green"><i class="fa-solid fa-check-double"></i></div>
-                        <div class="stat-info">
-                            <p>Validated Jobs</p>
-                            <h3>24</h3>
+                        
+                        <div class="contract-meta">
+                            <div class="meta-item">
+                                <span>Client</span>
+                                <strong>Nexus Labs</strong>
+                            </div>
+                            <div class="meta-item">
+                                <span>Escrow Value</span>
+                                <strong class="highlight-text">$4,500.00</strong>
+                            </div>
+                            <div class="meta-item">
+                                <span>Deadline</span>
+                                <strong>In 3 Days</strong>
+                            </div>
                         </div>
-                    </div>
-                    <div class="glass-card stat">
-                        <div class="icon-wrap purple"><i class="fa-solid fa-bolt"></i></div>
-                        <div class="stat-info">
-                            <p>Trust Score</p>
-                            <h3>98%</h3>
+
+                        <!-- Initial Submission Area -->
+                        <div class="submission-area" id="submission-area">
+                            <h4>Ready for AI Review?</h4>
+                            <p>Submit your GitHub repository or ZIP file to initiate the automated quality assurance process and release your funds.</p>
+                            
+                            <div class="input-group">
+                                <div class="input-icon"><i class="fa-brands fa-github"></i></div>
+                                <input type="text" id="repo-link" placeholder="https://github.com/alex/defi-dashboard" value="https://github.com/alex/defi-dashboard">
+                            </div>
+                            <button id="validate-btn" class="btn-primary full-width animate-press">
+                                <i class="fa-solid fa-microchip"></i> Initialize AI Validation
+                            </button>
                         </div>
+
+                        <!-- Live Terminal Processing Area -->
+                        <div class="processing-area hidden" id="processing-area">
+                            <div class="terminal-header">
+                                <div class="mac-btns"><span></span><span></span><span></span></div>
+                                <span>trustlayer-ai-engine.exe</span>
+                            </div>
+                            <div class="terminal-body" id="terminal-body">
+                                <!-- JS will inject terminal lines here -->
+                            </div>
+                            <div class="loading-bar-container">
+                                <div class="loading-bar" id="loading-bar"></div>
+                            </div>
+                        </div>
+
+                        <!-- Final Result Area -->
+                        <div class="result-area hidden" id="result-area">
+                            <div class="result-header">
+                                <div class="icon-ring" id="result-icon-ring">
+                                    <i class="fa-solid fa-check" id="result-icon"></i>
+                                </div>
+                                <h2 id="result-title">Validation Successful</h2>
+                                <p id="result-message">Code quality exceeds the 85% threshold. All security checks passed.</p>
+                            </div>
+                            
+                            <div class="score-breakdown">
+                                <div class="score-item">
+                                    <span>Code Quality</span>
+                                    <strong class="green-text">94%</strong>
+                                </div>
+                                <div class="score-item">
+                                    <span>Security</span>
+                                    <strong class="green-text">99%</strong>
+                                </div>
+                                <div class="score-item">
+                                    <span>Reqs Match</span>
+                                    <strong class="green-text">92%</strong>
+                                </div>
+                            </div>
+
+                            <button id="release-btn" class="btn-success full-width glow-effect">
+                                <i class="fa-brands fa-ethereum"></i> Release Funds to Wallet
+                            </button>
+                        </div>
+
                     </div>
                 </div>
 
-                <!-- Active Contract & AI Validation Panel -->
-                <div class="validation-section glass-card">
-                    <div class="section-header">
-                        <h3>Active Contract: <span>Frontend Development</span></h3>
-                        <span class="badge pending">Awaiting Validation</span>
-                    </div>
-                    
-                    <div class="contract-details">
-                        <p><strong>Client:</strong> Acme Corp</p>
-                        <p><strong>Value:</strong> $1,200.00</p>
-                        <p><strong>Requirements:</strong> Responsive React App, Redux State, 90%+ Lighthouse Score.</p>
-                    </div>
-
-                    <!-- Submission Form -->
-                    <div class="submission-area" id="submission-area">
-                        <h4>Submit Work for AI Validation</h4>
-                        <div class="input-group">
-                            <i class="fa-brands fa-github"></i>
-                            <input type="text" id="repo-link" placeholder="Paste GitHub Repository URL...">
+                <!-- Right Column (Analytics & History) -->
+                <div class="analytics-col stagger-3">
+                    <!-- Chart Card -->
+                    <div class="chart-card glass-panel">
+                        <div class="card-header small">
+                            <h3>Escrow Volume (30 Days)</h3>
+                            <select class="glass-select"><option>USD</option><option>ETH</option></select>
                         </div>
-                        <button id="validate-btn" class="btn-primary full-width">
-                            <i class="fa-solid fa-microchip"></i> Run AI Validation
-                        </button>
+                        <div class="chart-container">
+                            <canvas id="volumeChart"></canvas>
+                        </div>
                     </div>
 
-                    <!-- Loading / Processing State -->
-                    <div class="processing-area hidden" id="processing-area">
-                        <div class="scanner">
-                            <div class="scan-line"></div>
+                    <!-- Recent Transactions -->
+                    <div class="transactions-card glass-panel">
+                        <div class="card-header small">
+                            <h3>Recent Payouts</h3>
+                            <a href="#" class="view-all">View All</a>
                         </div>
-                        <h4>AI is validating your code...</h4>
-                        <p>Analyzing logic, code quality, and project requirements.</p>
-                    </div>
-
-                    <!-- Result State -->
-                    <div class="result-area hidden" id="result-area">
-                        <div class="score-circle">
-                            <svg viewBox="0 0 36 36" class="circular-chart green">
-                              <path class="circle-bg"
-                                d="M18 2.0845
-                                  a 15.9155 15.9155 0 0 1 0 31.831
-                                  a 15.9155 15.9155 0 0 1 0 -31.831"
-                              />
-                              <path class="circle"
-                                stroke-dasharray="0, 100"
-                                id="score-path"
-                                d="M18 2.0845
-                                  a 15.9155 15.9155 0 0 1 0 31.831
-                                  a 15.9155 15.9155 0 0 1 0 -31.831"
-                              />
-                              <text x="18" y="20.35" class="percentage" id="score-text">0%</text>
-                            </svg>
-                        </div>
-                        <h3 id="result-title">Validation Passed!</h3>
-                        <p id="result-message">Work meets all quality standards.</p>
-                        
-                        <div class="release-action hidden" id="release-action">
-                            <button id="release-btn" class="btn-success">
-                                <i class="fa-solid fa-unlock-keyhole"></i> Release Escrow Payment
-                            </button>
-                        </div>
+                        <ul class="tx-list">
+                            <li class="tx-item">
+                                <div class="tx-icon green"><i class="fa-solid fa-arrow-down"></i></div>
+                                <div class="tx-info">
+                                    <h5>NFT Marketplace UI</h5>
+                                    <span>Today, 10:45 AM</span>
+                                </div>
+                                <div class="tx-amount">
+                                    <strong>+$2,100.00</strong>
+                                    <span><i class="fa-brands fa-ethereum"></i> 1.2 ETH</span>
+                                </div>
+                            </li>
+                            <li class="tx-item">
+                                <div class="tx-icon green"><i class="fa-solid fa-arrow-down"></i></div>
+                                <div class="tx-info">
+                                    <h5>Smart Contract Audit</h5>
+                                    <span>Aug 04, 2:15 PM</span>
+                                </div>
+                                <div class="tx-amount">
+                                    <strong>+$3,500.00</strong>
+                                    <span><i class="fa-brands fa-ethereum"></i> 2.0 ETH</span>
+                                </div>
+                            </li>
+                            <li class="tx-item">
+                                <div class="tx-icon green"><i class="fa-solid fa-arrow-down"></i></div>
+                                <div class="tx-info">
+                                    <h5>Backend Refactor</h5>
+                                    <span>Jul 29, 9:00 AM</span>
+                                </div>
+                                <div class="tx-amount">
+                                    <strong>+$1,800.00</strong>
+                                    <span><i class="fa-brands fa-ethereum"></i> 1.03 ETH</span>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
             </div>
         </main>
     </div>
+
+    <!-- Celebration Canvas for Confetti (Optional) -->
+    <canvas id="confetti-canvas"></canvas>
 
     <script src="app.js"></script>
 </body>
